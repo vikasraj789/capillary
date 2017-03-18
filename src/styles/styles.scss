@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+@import "imports";
+
+@include generate-margin-classes-for(-50);
+//generating padding classes
+$paddingIndex:0;
+@while($paddingIndex < 101) {
+  @include generate-padding-classes-for($paddingIndex);
+  $paddingIndex: $paddingIndex + 5;
+}
+
+
+.wrapper {
+  min-height: 100vh;
+
+}
